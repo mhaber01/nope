@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html>
+<title>Justin & Liz</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href = "eboard/swe_gear.jpg" type = "image/icon" rel = "shortcut icon" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+<style>
+
+@font-face {
+  font-family: "AmostelySignature";
+  src: url("AmostelySignature.ttf")
+}
+
+@font-face {
+  font-family: "neuton";
+  src: url("neuton/Neuton-Regular.ttf");
+}
+
+@font-face {
+  font-family: "woodford-bourne";
+  src: url("woodford-bourne/WoodfordBournePRO-Bold.otf");
+}
+
+body, h1, h2, h4, h5, h6, {
+  font-family: woodford-bourne;
+  color: #383C50;
+}
+
+p, li {
+  font-family: neuton;
+  font-size: 18px;
+}
+
+body, html {
+    height: 100%;
+    color: #383C50;
+    /*background-color: #EEF1F2;*/
+    line-height: 1.8;
+    scroll-behavior: smooth;
+    font-family: "Lora-Regular";
+}
+
+* {box-sizing: border-box;}
+
+
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-family: woodford-bourne;
+	font-size: 30px;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .sectionTitle {
+    font-size: 50px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .sectionTitle {
+    font-size: 40px;
+  }
+}
+
+/* Create a sticky/fixed navbar */
+#navbar {
+  overflow: hidden;
+  background-color: white;
+  padding: 8px 8px; /* Large padding which will shrink on scroll (using JS) */
+  transition: 0.8s; /* Adds a transition effect when the padding is decreased */
+  position: fixed; /* Sticky/fixed navbar */
+  width: 100%;
+  top: 0; /* At the top */
+  z-index: 99;
+}
+
+/* Style the logo */
+#navbar #logo {
+  font-size: 60px;
+  font-weight: bold;
+  transition: 0.6s;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 5px 10px !important;
+  }
+}
+
+.button-title{
+  display: block !important;
+  text-decoration: none;
+  cursor:pointer;
+  margin-top: -12px;
+  /*padding-left: 65px;*/
+  text-align: center;
+}
+
+.button{
+  font-family: woodford-bourne;
+  border:none;
+  display:inline-block;
+  padding:8px 16px;
+  margin-top: -8px;
+  margin-bottom: -8px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap;
+  font-size: 16px;
+}
+
+.button:hover {
+  color: #77633d;
+}
+
+.booknow{
+  display:inline-block;
+  text-decoration:none;
+  font-family: woodford-bourne;
+  color: #383C50;
+  font-size:15px;
+  font-weight:600;
+  line-height:100%;
+  border: none;
+  -webkit-appearance: inherit;
+  background-color: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select:none;
+  -webkit-font-smoothing:antialiased!important;
+  cursor:pointer;
+  /*
+  z-index:99998;
+  background:#fff;
+  border:1px solid transparent;
+  padding:10px 10px 10px 10px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  cursor:pointer;
+  -webkit-font-smoothing:antialiased!important;
+  outline-color:rgba(0,78,255,0.5);text-shadow:1px 1px 1px rgba(0,0,0,0.004);
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  box-shadow:0 0 0 0.5px rgba(50,50,93,.17), 0 2px 5px 0 rgba(50,50,93,.1), 0 1px 1.5px 0 rgba(0,0,0,.07), 0 1px 2px 0 rgba(0,0,0,.08);
+  */
+}
+
+.booknow:hover{
+  /*background: #fafafa;*/
+  border-bottom: 2px solid currentColor;
+  color: #77633d;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a.url:hover{
+  border-bottom: 2px solid currentColor;
+  color: #77633d;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#wedding_date {
+  float: left;
+  display: inline block;
+  margin: 0;
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+#wedding_location {
+  float: left;
+  display: inline block;
+  margin: 0;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+#wedding_hashtag {
+  float: right;
+  display: inline block;
+  padding-right: 5px;
+  font-size: 14px;
+  margin: 0;
+}
+
+hr {
+	display: inline-block;
+	width: 300px;
+	height: 3px;
+	margin: 10px;
+  overflow: hidden;
+  background-color: #383C50;
+}
+
+.center-row {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.row {
+  display: -webkit-flex; /* Safari */
+  -webkit-align-items: top; /* Safari 7.0+ */
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  vertical-align: top;
+}
+
+.w3-bottombar{
+  border-bottom:6px solid #000000!important}
+
+.main-color{
+  color:#fff!important;
+  background-color:#000000!important;
+}
+
+.main-border-color {
+  border-color:#000000!important;
+}
+
+.main-footer-colors {
+    color:black;
+    background-color: #f1f1f1!important;
+}
+
+.main-hover-color:hover{
+  color: #000000!important;
+  background-color: #FFFFFF!important;
+}
+
+.main-footer-hover-opacity:hover{
+  color:#DBC554; 
+  opacity:1;
+}
+
+.container {
+  margin-left: 33%;
+}
+
+.navy-background{
+  color:#fff!important;
+  background-color:#383C50!important;
+}
+
+.thingstodo_container {
+  position: relative;
+  width: 32%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width:275px;
+  height:275px;
+  object-fit:cover;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.thingstodo_container:hover .image {
+  opacity: 0.3;
+}
+
+.thingstodo_container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: #151B54;
+  font-size: 24px;
+}
+
+.visit {
+  font-size: 20px;
+  margin-top: -18px;
+}
+
+.vl {
+  border-left: 3px solid #151B54;
+  height: 390px;
+  position: absolute;
+  margin-right: 20px;
+  margin-top: 35px;
+}
+
+.vl_long {
+  border-left: 3px solid #151B54;
+  height: 500px;
+  position: absolute;
+  margin-right: 20px;
+  margin-top: 35px;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1{
+  background-attachment: fixed;
+  background-position: 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgimg-2{
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bgimg-3{
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-4 {
+  background-attachment: fixed;
+  background-position: center top 15%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-5 {
+  background-attachment: fixed;
+  background-position: center top 15%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-6 {
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Slides */
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+
+a {
+  text-decoration: none;
+}
+
+/* First image */
+.bgimg-1 {
+    background-image: url('EngagementPhotos/0104.jpg');
+    min-height: 100%;
+}
+
+/* Second image */
+.bgimg-2 {
+    background-image: url("EngagementPhotos/0234.jpg");
+    min-height: 100%;
+}
+
+/* Third image */
+.bgimg-3 {
+    background-image: url("EngagementPhotos/0250.jpg");
+    min-height: 100%;
+}
+
+/* Fourth image */
+.bgimg-4 {
+  background-image: url("EngagementPhotos/0196.jpg");
+  min-height: 100%;
+}
+
+/* Fifith image */
+.bgimg-5 {
+  background-image: url("EngagementPhotos/IMG_0018.JPG");
+  min-height: 100%;
+}
+
+/* Sixth image */
+.bgimg-6 {
+  background-image: url("EngagementPhotos/0219.jpg");
+  min-height: 100%;
+}
+
+.itinerary {
+  display: none;
+}
+
+.w3-wide {letter-spacing: 10px;}
+/*.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+</style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div id="navbar" class="w3-center">
+
+    <!-- Top Left 
+    <div style="position: absolute;">
+      <p id="wedding_date">September 18, 2020</p>
+      <p id ="wedding_location">Beach Haven, NJ</p>
+    </div>
+
+    <p id="wedding_hashtag">#LizAndJust</p>
+    -->
+
+    <!-- Title -->
+    <div>
+    	<a href="#home" id="logo" class="button-title w3-hide-small" style="font-family:AmostelySignature; font-weight: inherit;">Elizabeth & Justin</a>
+    </div>
+
+    <!-- Right 
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    -->
+
+    <a href="#ourwedding" class="button w3-center">OUR WEDDING</a>
+    <a href="#schedule" class="button w3-center">SCHEDULE OF EVENTS</a>
+    <a href="#wheretostay" class="button w3-center">WHERE TO STAY</a>
+    <a href="#thingstodo" class="button w3-center">THINGS TO DO</a>
+    <a href="#gettingaround" class="button w3-center">GETTING AROUND</a>
+    <a href="#registry" class="button w3-center">REGISTRY</a>
+    
+  </div>
+
+  <!--Navbar on small screens
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium" style="display: block; position: relative;">
+    <a href="#ourwedding" class="w3-bar-item w3-button button" onclick="toggleFunction()">OUR WEDDING</a>
+    <a href="#schedule" class="w3-bar-item w3-button button" onclick="toggleFunction()">SCHEDULE OF EVENTS</a>
+    <a href="#wheretostay" class="w3-bar-item w3-button button" onclick="toggleFunction()">WHERE TO STAY</a>
+    <a href="#thingstodo" class="w3-bar-item w3-button button" onclick="toggleFunction()">THINGS TO DO</a>
+    <a href="#gettingaround" class="w3-bar-item w3-button button" onclick="toggleFunction()">GETTING AROUND</a>
+    <a href="#registry" class="w3-bar-item w3-button button" onclick="toggleFunction()">REGISTRY</a>
+  </div>
+  -->
+</div>
+
+<!-- First Parallax Image with Justin & Liz Text -->
+<div class="bgimg-1 w3-display-container w3-center" id="home">
+</div>
+
+<!-- Our Wedding -->
+<div class="w3-content w3-container w3-padding-64 w3-hide-small" id="ourwedding">
+    <div style="padding-top: 8%; padding-bottom: 12%;">
+      <h2 class="w3-center" style="font-family:AmostelySignature; margin-top:-40px; font-size: 80px;">Elizabeth Schumann</h2>
+      <h3 class="w3-center" style="font-family:AmostelySignature; margin-top:-80px; font-size: 100px;">&</h3>
+      <h2 class="w3-center" style="font-family:AmostelySignature; margin-top:-80px; font-size: 80px;">Justin Haber</h2>
+      <h3 class="w3-center" style="margin-top:25px; font-size: 25px; font-family: woodford-bourne;">ARE GETTING MARRIED ON</h3>
+      <h2 class="w3-center" style="font-family:AmostelySignature; margin-top:-30px; font-size: 80px;">Friday, September 18, 2020</h2>
+      <h3 class="w3-center" style="margin-top:10px; margin-bottom: -40px; font-size: 25px; font-family: woodford-bourne;">BEACH HAVEN, LONG BEACH ISLAND, NEW JERSEY</h3>
+    </div>
+</div>
+
+<!-- Our Wedding -->
+<div class="w3-content w3-container w3-padding-64 w3-hide-medium w3-hide-large" id="ourwedding">
+    <div style="padding-top: 8%; padding-bottom: 12%;">
+      <h2 class="w3-center" style="font-family:AmostelySignature; margin-top:-40px; font-size: 60px;">Elizabeth Schumann</h2>
+      <h3 class="w3-center" style="font-family:AmostelySignature; margin-top:-40px; font-size: 70px;">&</h3>
+      <h2 class="w3-center" style="font-family:AmostelySignature; margin-top:-40px; font-size: 60px;">Justin Haber</h2>
+      <h3 class="w3-center" style="margin-top:15px; font-size: 20px; font-family: woodford-bourne;">ARE GETTING MARRIED ON</h3>
+      <h2 class="w3-center" style="font-family:AmostelySignature; margin-top:-20px; font-size: 50px;">Friday, September 18, 2020</h2>
+      <h3 class="w3-center" style="margin-top:10px; margin-bottom: -40px; font-size: 20px; font-family: woodford-bourne;">BEACH HAVEN, LONG BEACH ISLAND, NEW JERSEY</h3>
+    </div>
+</div>
+
+  <!--<div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large w3-hide-small">
+      <br>
+      <br>
+      <img src="picture1.JPG" class="w3-round w3-image w3-hover-opacity" alt="Picture" width="500" height="333">
+    </div>
+	-->
+
+  <!-- Notes
+    <div class="w3-center" style="margin-left: 100px; margin-right: 100px;">
+      <p style="padding-top:70px; font-size: 20px;">Mark your calendars because the date has been set! Join us on our big day at the place where our relationship began, the Jersey Shore. With a full itinerary set from Friday, September 18 to Saturday, September 19, we know you'll love the shore just as much as we do. You can find all wedding, reception, and morning after details below.</p>
+      <p style="font-family:charger-regular; font-size:30px; margin-top:-20px; padding-left: 35px;">xoxo, Justin & Liz</p>
+    </div>
+  </div>
+<!-- Second Parallax Image with Your Stay Text -->
+<div class="bgimg-2 w3-display-container w3-center">
+</div>
+
+  <!-- The Wedding Party -->
+  <!-- class="w3-bottombar" 
+
+  <div class="w3-container w3-padding-64 w3-center">
+    <h2 class="sectionTitle" style="font-family:charger-regular; margin-bottom:-30px; margin-top:-40px;">The Wedding Party</h2>
+    <h3>The Bridesmaids</h3>
+
+    <div class="center-row">
+      <div class="row"><br>
+
+        <div>
+          <img src="bridesmaids/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+          </a>
+        </div>
+
+        <div>
+          <img src="bridesmaids/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+        <div>
+          <img src="bridesmaids/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+        <div>
+          <img src="bridesmaids/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+        <div>
+          <img src="bridesmaids/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+      </div>
+    </div>
+
+    <h3>The Groomsmen</h3>
+
+    <div class="center-row">
+      <div class="row"><br>
+
+        <div>
+          <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+        <div>
+          <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+        <div>
+          <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+        <div>
+          <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+        <div>
+          <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+      </div>
+    </div>
+
+    <h3>The Ring Bearer & Flower Girl</h3>
+    
+    <div class="center-row">
+      <div class="row"><br>
+
+  	   <div>
+  	     <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+  	     <h3>Name</h3>
+  	     <p>Title</p>
+  	   </div>
+
+  	   <div>
+  	     <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+  	     <h3>Name</h3>
+  	     <p>Title</p>
+  	   </div>
+
+      </div>
+    </div>
+
+    <h3>The Parents of the Bride</h3>
+
+    <div class="center-row">
+      <div class="row"><br>
+
+        <div>
+          <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+        <div>
+          <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+      </div>
+    </div>
+
+    <h3>The Parents of the Groom</h3>
+
+    <div class="center-row">
+      <div class="row"><br>
+
+        <div>
+          <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+        <div>
+          <img src="groomsmen/icon.png" alt="Name" style="width:45%" class="w3-circle w3-hover-opacity">
+          <h3>Name</h3>
+          <p>Title</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  -->
+
+<!-- Schedule of Events -->
+<div class="w3-content w3-container w3-padding-64" id="schedule">
+
+  <!-- Menu Container -->
+  <div class="w3-center w3-hide-small" style="margin-bottom: 20px;">
+    <h3 style="margin-bottom: 30px; font-family: AmostelySignature; font-size: 80px;">Schedule of Events</h3>
+    <img src="Clam_Icon.png" alt="Clam Shell" style="height: 60px; width: 80px;">
+  </div>
+
+  <div class="w3-center w3-hide-medium w3-hide-large" style="margin-bottom: 20px;">
+    <h3 style="margin-bottom: 30px; font-family: AmostelySignature; font-size: 80px;">Schedule</h3>
+    <img src="Clam_Icon.png" alt="Clam Shell" style="height: 60px; width: 80px;">
+  </div>
+
+  <div class="w3-container" id="itinerary">
+    <div class="w3-content w3-center" style="max-width:700px">
+    
+      <div class="w3-row w3-center w3-padding">
+        <a href="javascript:void(0)" onclick="openMenu(event, 'Sept17');" id="myLink">
+          <div class="w3-col tablink" style="font-size: 16px; width: 33%; font-family: woodford-bourne;">Thursday, September 17, 2020</div>
+        </a>
+        <a href="javascript:void(0)" onclick="openMenu(event, 'Sept18');" id="myLink">
+          <div class="w3-col tablink" style="font-size: 16px; width: 33%; font-family: woodford-bourne;">Friday, September 18, 2020</div>
+        </a>
+        <a href="javascript:void(0)" onclick="openMenu(event, 'Sept19');">
+          <div class="w3-col tablink" style="font-size: 16px; width: 33%; font-family: woodford-bourne;">Saturday, September 19, 2020</div>
+        </a>
+      </div>
+
+      <div id="Sept17" class="w3-container itinerary w3-padding-32">
+        <div>
+          <h5 style="font-size: 20px; font-family: woodford-bourne;">Welcome Brews & Cocktails</h5>
+          <div class="w3-opacity">
+            <p>Details to come!</p>
+            <!--<p>Address</p>
+            <p>Time</p><br>-->
+          </div>
+        </div>
+      </div> 
+
+      <div id="Sept18" class="w3-container itinerary w3-padding-32">
+        <div>
+          <h5 style="font-size: 20px; font-family: woodford-bourne;">The Ceremony</h5>
+          <div class="w3-opacity">
+            <p>St. Thomas Aquinas Church</p>
+            <p><a class="url" href="https://goo.gl/maps/WLi4CLMGLGx7Pnm67" target="_blank">2nd Street, Beach Haven, NJ 08008</a></p>
+            <p>1:30 PM</p>
+          </div>
+          <!--
+          <div style="margin-bottom: 10px;">
+            <div title="Add to Calendar" class="addeventatc" style="color: #151B54 !important;">
+              ADD TO CALENDAR
+              <span class="start">09/18/2020 01:30 PM</span>
+              <span class="end">09/18/2020 3:30 PM</span>
+              <span class="timezone">America/New_York</span>
+              <span class="title">The Wedding Ceremony @ St. Thomas Aquinas Church</span>
+              <span class="description"></span>
+              <span class="location">2nd Street, Beach Haven, NJ 08008</span>
+            </div>
+          </div>
+          
+          <button class="booknow"><a href="https://goo.gl/maps/WLi4CLMGLGx7Pnm67" target="_blank"><img src="placeholder.png" style="width: 32px; height: 22px; padding-right: 10px; padding-left: -5px;"><img placeholder.png>MAP</a></button>
+          -->
+        </div>
+        
+      
+        <div style="padding-top: 5%;">
+          <h5 style="font-size: 20px; font-family: woodford-bourne;">Reception</h5>
+          <div class="w3-opacity">
+            <p>Parker's Garage & Oyster Saloon</p>
+            <p><a class="url" href="https://goo.gl/maps/WLi4CLMGLGx7Pnm67" target="_blank">116 Northwest Avenue, Beach Haven, NJ 08008</a></p>
+            <p>6:00 PM - 11:00 PM</p>
+          </div>
+          <!--
+          <div style="margin-bottom: 10px;">
+            <div title="Add to Calendar" class="addeventatc" style="color: #151B54 !important;">
+              ADD TO CALENDAR
+              <span class="start">09/18/2020 06:00 PM</span>
+              <span class="end">09/18/2020 11:00 PM</span>
+              <span class="timezone">America/New_York</span>
+              <span class="title">The Reception @ Parker's Garage & Oyster Saloon</span>
+              <span class="description"></span>
+              <span class="location">116 Northwest Avenue, Beach Haven, NJ 08008</span>
+            </div>
+          </div>
+          
+          <button class="booknow"><a href="https://goo.gl/maps/WLi4CLMGLGx7Pnm67" target="_blank"><img src="placeholder.png" style="width: 32px; height: 22px; padding-right: 10px; padding-left: -5px;">MAP</a></button>
+          -->
+        </div>
+      
+        <div style="padding-top: 5%;">
+          <h5 style="font-size: 20px; font-family: woodford-bourne;">After Party</h5>
+            <div class="w3-opacity">
+              <p>Bird & Betty's</p>
+              <p><a class="url" href="https://goo.gl/maps/WLi4CLMGLGx7Pnm67" target="_blank">529 Dock Road, Beach Haven, NJ 08008</a></p>
+              <p>11:00 PM</p>
+            </div>
+            <!--
+            <div style="margin-bottom: 10px;">
+              <div title="Add to Calendar" class="addeventatc" style="color: #151B54 !important;">
+                ADD TO CALENDAR
+                <span class="start">09/18/2020 11:00 PM</span>
+                <span class="end">09/18/2020 01:00 AM</span>
+                <span class="timezone">America/New_York</span>
+                <span class="title">Bird & Betty's</span>
+                <span class="description"></span>
+                <span class="location">529 Dock Road, Beach Haven, NJ 08008</span>
+              </div>
+            </div>
+            
+            <button class="booknow"><a href="https://goo.gl/maps/WLi4CLMGLGx7Pnm67" target="_blank"><img src="placeholder.png" style="width: 32px; height: 22px; padding-right: 10px; padding-left: -5px;">MAP</a></button>
+            -->
+        </div>
+
+      </div>
+
+      <div id="Sept19" class="w3-container itinerary w3-padding-32">
+        <div>
+          <h5 style="font-size: 20px; font-family: woodford-bourne;">Weekend Farewell</h5>
+          <div class="w3-opacity">
+            <p>Details to come!</p>
+            <!--<p>Address</p>
+            <p>Time</p><br>-->
+          </div>
+        </div>
+      </div> 
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- Third Parallax Image with Your Stay Text -->
+<div class="bgimg-3 w3-display-container w3-center">
+</div>
+
+<!-- Where to Stay -->
+<div class="w3-content w3-container w3-padding-64" id="wheretostay">
+
+  <div class="w3-center w3-hide-small" style="margin-bottom:20px;">
+    <h3 style="margin-bottom:30px; font-family: AmostelySignature; font-size: 80px;">Beach Haven, Long Beach Island</h3>
+    <img src="Fish_Icon.png" alt="Clam Shell" style="height: 70px; width: 130px;">
+  </div>
+
+  <div class="w3-center w3-hide-medium w3-hide-large" style="margin-bottom:20px;">
+    <h3 style="margin-bottom:30px; font-family: AmostelySignature; font-size: 80px;">Beach Haven, LBI</h3>
+    <img src="Fish_Icon.png" alt="Clam Shell" style="height: 70px; width: 130px;">
+  </div>
+
+  <div class="w3-center w3-hide-small">
+    <div style="width: 70%; display: block; margin: auto;">
+      <p>Room blocks are available at two hotels under the Schumann – Haber reservation at the Drifting Sands Hotel and Holiday Inn Manahawkin. Transportation will be provided from both hotels and more information will be provided upon check in. We also have two additional non-block hotel recommendations that are oceanfront and located in the heart of Beach Haven. Both are very close to the venue! More information about each hotel and additional non-block accommodations are listed below for your reference. Please feel free to reach out if you have any questions when booking your stay!</p>
+      <p>We would love our guests to stay for a long weekend and enjoy all the things we love about Beach Haven and Long Beach Island! We highly recommend renting a house on the island through Diane Turton realtors or online booking through AirBnB, HomeAway or VRBO since September is a beautiful month to rent at the beach. Although September is also considered “off-season”, the island is a popular area year-round and houses do book up quickly, so don’t wait, book now! We recommend staying in Beach Haven (or very close to it) as the ceremony and reception will be held here and many of our recommended and favorite things to do are in this area. We look forward to seeing everyone on the island!</p>
+    </div>
+  </div>
+
+  <div class="w3-center w3-hide-medium w3-hide-large">
+    <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+      <p>Room blocks are available at two hotels under the Schumann – Haber reservation at the Drifting Sands Hotel and Holiday Inn Manahawkin. Transportation will be provided from both hotels and more information will be provided upon check in. We also have two additional non-block hotel recommendations that are oceanfront and located in the heart of Beach Haven. Both are very close to the venue! More information about each hotel and additional non-block accommodations are listed below for your reference. Please feel free to reach out if you have any questions when booking your stay!</p>
+      <p>We would love our guests to stay for a long weekend and enjoy all the things we love about Beach Haven and Long Beach Island! We highly recommend renting a house on the island through Diane Turton realtors or online booking through AirBnB, HomeAway or VRBO since September is a beautiful month to rent at the beach. Although September is also considered “off-season”, the island is a popular area year-round and houses do book up quickly, so don’t wait, book now! We recommend staying in Beach Haven (or very close to it) as the ceremony and reception will be held here and many of our recommended and favorite things to do are in this area. We look forward to seeing everyone on the island!</p>
+    </div>
+  </div>
+
+
+
+  <!-- Big Screen -->
+  <div class="w3-container w3-center w3-hide-small">
+    <h3>Rental Housing</h3>
+    <div class="center-row">
+      <div class="row"><br>
+        <div class="w3-container" style="height: 100%; width: 40%; margin-right: 40px;">
+          <h3 style="font-size: 20px;">Diane Turton House Rentals</h3>
+          <p class="w3-opacity">217 N Bay Avenue, Beach Haven, NJ 08008<br>(609) 713-0307<br><a class="url" target="_blank" href=mailto:vmessec@dianeturton.com>vmessec@dianeturton.com</a></p>
+          <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+            <p>If you are interested in booking a house for a longer stay, please reach out to our realtor Virginia Messac a.k.a “Cookie”, who has a variety of homes available to rent.</p>
+          </div>
+          <p><a href="https://www.dianeturton.com/offices/4633-beach-haven-office" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+        </div>
+
+        <div class="vl"></div>
+
+        <div class="w3-container" style="height: 100%; width: 40%;">
+          <h3 style="font-size: 20px;">HomeAway, AirBNB, & VRBO</h3>
+          <p class="w3-opacity"><a class="url" target="_blank" href="https://www.homeaway.com/">homeaway.com</a><br><a class="url" target="_blank" href="https://www.airbnb.com/">airbnb.com</a><br><a class="url" target="_blank" href="https://www.vrbo.com/">vrbo.com</a></p>
+          <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+            <p>If you are looking for a longer stay we encourage renting through one of these online options which all have great houses available on the island at an affordable price! Some of the properties listed are looking for a full week rental, but if you contact the property owner, they will often accommodate a shorter rental period at a higher nightly price.<br>Two other sites to check are: <a class="url" href="https://www.vacationrentalslbi.com/" target="_blank"><em>VacationRentalslbi.com</em></a> and <a class="url" href="http://shoresummerrentals.com/" target="_blank"><em>ShoresummerRentals.com</em></a></p>
+          </div>
+          <p style="display: inline-block;">
+            <a href="https://www.dslbi.com/" target="_blank" class="booknow" style="width:105px;">HOMEAWAY</a>
+            <a href="https://www.airbnb.com/" target="_blank" class="booknow" style="width:105px; margin-left: 2px;">AIRBNB</a>
+            <a href="https://www.vrbo.com/" target="_blank" class="booknow" style="width:105px; margin-left: 2px;">VRBO</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Blocked Hotels</h3>
+    <div class="center-row">
+      <div class="row"><br>
+        <div class="w3-container" style="height: 100%; width: 40%; margin-right: 40px;">
+          <h3 style="font-size: 20px;">Drifting Sands Oceanfront Hotel</h3>
+          <p class="w3-opacity">119 East 9th Street, Ship Bottom, NJ 08008<br>(877) 524-7866<br><em>Located on island 15 minutes north from venue</em></p>
+          <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+            <p>Please call the hotel directly to make a reservation under the Schumann – Haber wedding in order to get the group rates for the Ocean Side block. All reservations must be made on or before the cut-off date of 8/14/2020 or the rooms get released to the public. The Ocean Side rooms include a king bed or double beds, please request your preference upon booking. Additional room options at the hotel are available. The front desk is open 9am-5pm, 7 days a week during the high season from April 1st through mid-October. If booking during the off season, please leave a voice mail as the desk will call you back to assist with the reservation within a week. </p>
+          </div>
+          <p><a href="https://www.dslbi.com/" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+        </div>
+
+        <div class="vl"></div>
+
+        <div class="w3-container" style="height: 100%; width: 40%;">
+          <h3 style="font-size: 20px;">Holiday Inn Manahawkin</h3>
+          <p class="w3-opacity">151 New Jersey 72, Stafford Township, NJ 08050<br>(609) 481-6100<br><em>Located off island 30 minutes from venue</em></p>
+          <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+            <p>To make reservations please call the hotel directly or visit the website link below to book directly online with the group code XX. If you call the hotel, please mention the Schumann – Haber wedding. Please make your reservation by 8/18/19 as rooms will be released to the public.</p>
+          </div> 
+          <p><a href="https://www.ihg.com/holidayinn/hotels/us/en/manahawkin/hwwnj/hoteldetail" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Other Hotel Options</h3>
+    <div class="center-row">
+      <div class="row"><br>
+        <div class="w3-container" style="height: 100%; width: 40%; margin-right: 40px;">
+          <h3 style="font-size: 20px;">The Engleside Inn</h3>
+          <p class="w3-opacity">30 Engleside Avenue, Beach Haven, NJ 08008<br>(800) 762-2214<br><em>Within walking distance to church and venue</em></p>
+          <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+            <p>This is a family oriented historic inn located beach front in the heart of Beach Haven and walkable to the island’s main attractions. Just a few blocks from walkable attractions including shopping, amusement parks, museums, restaurants and bar hang outs.</p>
+          </div>
+          <p><a href="https://www.engleside.com/" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+        </div>
+
+        <div class="vl"></div>
+
+        <div class="w3-container" style="height: 100%; width: 40%;">
+          <h3 style="font-size: 20px;">The Sea Shell Resort and Beach Club</h3>
+          <p class="w3-opacity">10 S Atlantic Avenue, Beach Haven, NJ 08008<br>(609) 492-4611<br><em>Within walking distance to church and venue</em></p>
+          <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+            <p>This is a popular beach front resort located in the heart of Beach Haven with a super fun tiki bar and grill (tiki tea’s are a must try!) and one of our favorite post beach happy hour spots with live music! Just a few blocks from walkable attractions including shopping, amusement parks, museums, restaurants and bar hang outs.</p>
+          </div>
+          <p><a href="https://theseashellresort.com/" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Small Screen -->
+
+  <div class="w3-container w3-center w3-hide-medium w3-hide-large">
+
+    <h3>Rental Housing</h3>
+    <div class="w3-container" style="height: 100%; width: 100%;">
+      <h3 style="font-size: 20px;">Drifting Sands Oceanfront Hotel</h3>
+      <p class="w3-opacity">119 East 9th Street, Ship Bottom, NJ 08008<br>(877) 524-7866<br><em>Located on island 15 minutes north from venue</em></p>
+      <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+        <p>Please call the hotel directly to make a reservation under the Schumann – Haber wedding in order to get the group rates for the Ocean Side block. All reservations must be made on or before the cut-off date of 8/14/2020 or the rooms get released to the public. The Ocean Side rooms include a king bed or double beds, please request your preference upon booking. Additional room options at the hotel are available. The front desk is open 9am-5pm, 7 days a week during the high season from April 1st through mid-October. If booking during the off season, please leave a voice mail as the desk will call you back to assist with the reservation within a week. </p>
+      </div>
+      <p><a href="https://www.dslbi.com/" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+    </div>
+
+    <div class="w3-container" style="height: 100%; width: 100%;">
+      <h3 style="font-size: 20px;">Holiday Inn Manahawkin</h3>
+      <p class="w3-opacity">151 New Jersey 72, Stafford Township, NJ 08050<br>(609) 481-6100<br><em>Located off island 30 minutes from venue</em></p>
+      <div style="margin-top: -15px; width:100%; overflow:auto;">
+        <p>To make reservations please call the hotel directly or visit the website link below to book directly online with the group code XX. If you call the hotel, please mention the Schumann – Haber wedding. Please make your reservation by 8/18/19 as rooms will be released to the public.</p>
+      </div> 
+      <p><a href="https://www.ihg.com/holidayinn/hotels/us/en/manahawkin/hwwnj/hoteldetail" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+    </div>
+
+    <hr>
+
+    <h3>Blocked Hotels</h3>
+    <div class="w3-container" style="height: 100%; width: 100%;">
+      <h3 style="font-size: 20px;">Drifting Sands Oceanfront Hotel</h3>
+      <p class="w3-opacity">119 East 9th Street, Ship Bottom, NJ 08008<br>(877) 524-7866<br><em>Located on island 15 minutes north from venue</em></p>
+      <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+        <p>Please call the hotel directly to make a reservation under the Schumann – Haber wedding in order to get the group rates for the Ocean Side block. All reservations must be made on or before the cut-off date of 8/14/2020 or the rooms get released to the public. The Ocean Side rooms include a king bed or double beds, please request your preference upon booking. Additional room options at the hotel are available. The front desk is open 9am-5pm, 7 days a week during the high season from April 1st through mid-October. If booking during the off season, please leave a voice mail as the desk will call you back to assist with the reservation within a week. </p>
+      </div>
+      <p><a href="https://www.dslbi.com/" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+    </div>
+
+    <div class="w3-container" style="height: 100%; width: 100%;">
+      <h3 style="font-size: 20px;">Holiday Inn Manahawkin</h3>
+      <p class="w3-opacity">151 New Jersey 72, Stafford Township, NJ 08050<br>(609) 481-6100<br><em>Located off island 30 minutes from venue</em></p>
+      <div style="margin-top: -15px; width:100%; overflow:auto;">
+        <p>To make reservations please call the hotel directly or visit the website link below to book directly online with the group code XX. If you call the hotel, please mention the Schumann – Haber wedding. Please make your reservation by 8/18/19 as rooms will be released to the public.</p>
+      </div> 
+      <p><a href="https://www.ihg.com/holidayinn/hotels/us/en/manahawkin/hwwnj/hoteldetail" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+    </div>
+
+    <hr>
+
+    <h3>Other Hotel Options</h3>
+    <div class="w3-container" style="height: 100%; width: 100%;">
+      <h3 style="font-size: 20px;">The Engleside Inn</h3>
+      <p class="w3-opacity">30 Engleside Avenue, Beach Haven, NJ 08008<br>(800) 762-2214<br><em>Within walking distance to church and venue</em></p>
+      <div style="margin-top: -15px; width:100%; overflow:auto;">
+        <p>This is a family oriented historic inn located beach front in the heart of Beach Haven and walkable to the island’s main attractions. Just a few blocks from walkable attractions including shopping, amusement parks, museums, restaurants and bar hang outs.</p>
+      </div>
+      <p><a href="https://www.engleside.com/" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+    </div>
+
+    <div class="w3-container" style="height: 100%; width: 100%;">
+      <h3 style="font-size: 20px;">The Sea Shell Resort and Beach Club</h3>
+      <p class="w3-opacity">10 S Atlantic Avenue, Beach Haven, NJ 08008<br>(609) 492-4611<br><em>Within walking distance to church and venue</em></p>
+      <div style="margin-top: -15px; width:100%; overflow:auto;">
+        <p>This is a popular beach front resort located in the heart of Beach Haven with a super fun tiki bar and grill (tiki tea’s are a must try!) and one of our favorite post beach happy hour spots with live music! Just a few blocks from walkable attractions including shopping, amusement parks, museums, restaurants and bar hang outs.</p>
+      </div>
+      <p><a href="https://theseashellresort.com/" target="_blank" class="booknow" style="width:105px;">BOOK NOW</a></p>
+    </div>
+  </div>
+
+    <!--
+    <div class="w3-row-padding w3-center">
+      Info Block Template 
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <h3>Hotel 1</h3>
+        <p class="w3-opacity">Address<br>$$<br>Other</p>
+        <p>Great option.</p>
+        <p><a href="" target="_blank"><button class="w3-button main-color main-hover-color">Visit Website!</button></a></p>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <h3>Hotel 2</h3>
+        <p class="w3-opacity">Address<br>$$<br>Other</p>
+        <p>Great option, too.</p>
+        <p><a href="" target="_blank"><button class="w3-button main-color main-hover-color">Visit Website!</button></a></p>
+      </div>
+    </div>
+  -->
+
+    <!--
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <h3>Explore Your Opportunities (EYO)</h3>
+      <p class="w3-opacity">Saturday, March 30<br>9:00 AM (8AM, Meet @ Kelly)<br>Mount Saint Vincents</p>
+      <p>AAUW is hosting EYO (Explore Your Opportunities), the annual hands-on STEM conference to explore careers in science, technology, engineering, and math for 7th grade girls in New York City and Westchester County, and has asked for MC SWE's assistance. Join us as we introduce more girls to STEM! FREE Breakfast, lunch, and transportation will be provided.</p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <h3>SWE for Scouts</h3>
+      <p class="w3-opacity">Saturday, April 6<br>9:00 AM<br>LEO Hall</p>
+      <p>SWE welcomes the Girl Scouts of America to Manhattan College! Join us as we introduce Brownie and Junior Girl Scouts to all 5 disciplines of engineering plus computer science through fun and engaging workshops.</p>
+      <p><a href=""><button class="w3-button swe-purple swe-hover-purple" style="padding-left: 90px; padding-right: 90px;">I'm in!</button></a></p>
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <h3>Northrop Grumman Lecture</h3>
+      <p class="w3-opacity">Saturday, April 9<br>3:30 - 5:30 PM<br>TBD</p>
+      <p></p>
+    </div>
+  -->
+</div>
+
+<!-- Fourth Parallax Image with Our Story Text -->
+<div class="bgimg-4 w3-display-container w3-center">
+</div>
+
+<!-- Things to Do -->
+<div class="w3-content w3-container w3-padding-64" id="thingstodo">
+
+  <div class="w3-center" style="margin-bottom:20px;">
+    <h3 style="margin-bottom:30px; font-family: AmostelySignature; font-size: 80px;" id="schedule">Things to Do</h3>
+    <img src="StarFish_Icon.png" alt="Clam Shell" style="height: 80px; width: 90px;">
+  </div>
+
+<!--
+  <div class="w3-center w3-hide-medium w3-hide-large" style="margin-bottom: 20px;">
+    <h3 style="margin-bottom: 30px; font-family: AmostelySignature; font-size: 50px;">Things to Do</h3>
+    <img src="Clam_Icon.png" alt="Clam Shell" style="height: 60px; width: 80px;">
+  </div>
+-->
+
+  <div class="w3-center">
+    <div style="width: 70%; display: block; margin: auto;">
+      <p>Check out our favorite places on the island! Use the interactive map  by zooming in and clicking the icons to learn more about what this island has to offer.</p>
+    </div>
+  </div>
+  <div class="w3-center">
+    <div style=" display:inline-block; overflow:hidden;">
+      <iframe style="position:relative; top:-50px; border: none; " src="https://www.google.com/maps/d/embed?mid=1j51JUreXwJ91eCJExhc2_ma9ghmCSAKZ" width="700" height="500"></iframe>
+    </div>
+  </div>
+
+</div>
+<!--
+  <div class="w3-container w3-center">
+    <div class="center-row">
+      <div class="row"><br>
+        <div class="thingstodo_container" style="padding-right: 20px;">
+          <img src="ThingsToDo/longbeachisland.jpg" class="image">
+          <div class="middle">
+            <div class="text">
+              The Beach
+              <hr>
+              <div class="visit">VISIT</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="thingstodo_container" style="padding-right: 20px;">
+          <img src="ThingsToDo/fantasyisland.jpg" class="image">
+          <div class="middle">
+            <div class="text">
+              <div style="line-height: 25px;">Fantasy Island Amusement Park</div>
+              <hr>
+              <div class="visit">VISIT</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="thingstodo_container" style="padding-right: 20px;">
+          <img src="ThingsToDo/bayvillage.jpg" class="image">
+          <div class="middle">
+            <div class="text">
+              Bay Village
+              <hr>
+              <div class="visit">VISIT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="padding-top: 10px;"><br>
+        <div class="thingstodo_container" style="padding-right: 20px;">
+          <img src="ThingsToDo/thunderingsurfwaterpark.jpg" class="image">
+          <div class="middle">
+            <div class="text">
+              <div style="line-height: 25px;">Thundering Surf Water Park</div>
+              <hr>
+              <div class="visit">VISIT</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="thingstodo_container" style="padding-right: 20px;">
+          <img src="ThingsToDo/minigolf.jpg" class="image">
+          <div class="middle">
+            <div class="text">
+              Mini Golf
+              <hr>
+              <div class="visit">VISIT</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="thingstodo_container" style="padding-right: 20px;">
+          <img src="ThingsToDo/viking-village-shop.jpg" class="image">
+          <div class="middle">
+            <div class="text">
+              Viking Village
+              <hr>
+              <div class="visit">VISIT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    -->
+
+<!-- Fifth Parallax Image with Getting Around -->
+<div class="bgimg-5 w3-display-container w3-center">
+</div>
+<!-- Getting Around -->
+<div class="w3-content w3-container w3-padding-64" id="gettingaround">
+
+  <div class="w3-center" style="margin-bottom: 20px;">
+    <h3 style="margin-bottom:30px; font-family: AmostelySignature; font-size: 80px;">Getting Around</h3>
+    <img src="SeaShell_Icon.png" alt="Clam Shell" style="height: 65px; width: 80px;">
+  </div>
+  
+  <div class="w3-center">
+
+    <div style="width: 70%; display: block; margin: auto;">
+      <p>Not only is Beach Haven the heart of LBI. It has many of our favorite places and things within walking distance from each other! But some places may require some longer travel. Here are some of the services we use to get around the island.</p>
+    </div>
+    
+    <!-- First Row -->
+    <div class="w3-container w3-center w3-hide-small">
+      <h3>Taxi & Shuttle Services</h3>
+      <div class="center-row">
+        <div class="row"><br>
+          <div class="w3-container" style="height: 100%; width: 40%; margin-right: 40px;">
+            <h3 style="font-size: 20px;">Mike’s Affordable Shuttle Service</h3>
+            <p class="w3-opacity">Long Beach Island, NJ<br>(609) 287-3028<br><a class="url" target="_blank" href="http://www.mikesaffordableshuttle.com/">http://www.mikesaffordableshuttle.com/</a></p>
+            <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+              <p>Uber and Lyft are limited on the island, we recommend this local taxi service just in case!</p>
+            </div>
+            <p><a href="http://www.mikesaffordableshuttle.com/" target="_blank" class="booknow" style="width:105px;">VISIT SITE</a></p>
+          </div>
+
+          <div class="vl"></div>
+
+          <div class="w3-container" style="height: 100%; width: 40%;">
+            <h3 style="font-size: 20px;">LBI Shuttle</h3>
+            <p class="w3-opacity">Long Beach Island, NJ<br>(609) 342-2111<br><a class="url" target="_blank" href="https://www.lbishuttle.com/"> https://www.lbishuttle.com/</a></p>
+            <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+              <p>Long Beach Island Shuttles are a shuttle service that is run along all 18 miles of the island. With designated areas to stop it is easy to find a trolley and waive them down to get anywhere you need.</p>
+              <p>Shuttle Fees:<li>$2 per ride 10am - 7pm.</li><li>$5 per ride 7pm - close</li><li>$125 season pass (all times)</li></p>
+            </div>
+            <p><a href="https://itunes.apple.com/gh/app/lbi-shuttle/id1016633333" target="_blank" class="booknow" style="width:105px;">THE APP</a></p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Bike Rentals</h3>
+      <div class="center-row">
+        <div class="row"><br>
+          <div class="w3-container" style="height: 100%; width: 40%; margin-right: 40px;">
+            <h3 style="font-size: 20px;">AJ's Bike Rentals</h3>
+            <p class="w3-opacity">311 Bay Ave, Beach Haven, NJ 08008<br>(609) 492-2626<br><a class="url" target="_blank" href="https://www.yelp.com/biz/a-js-rentals-beach-haven">AJ's Bike Rentals - Yelp</a></p>
+            <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+              <p>This family owned business provideS quick service, honesty and reasonable prices. Try out a bunch of bikes before you pick the one that works best for you.</p>
+            </div>
+            <p><a href="https://www.yelp.com/biz/a-js-rentals-beach-haven" target="_blank" class="booknow" style="width:105px;">VISIT SITE</a></p>
+          </div>
+
+          <div class="vl"></div>
+
+          <div class="w3-container" style="height: 100%; width: 40%;">
+            <h3 style="font-size: 20px;">Surf Buggy Bike Shop</h3>
+            <p class="w3-opacity">1501 Long Beach Blvd, Beach Haven, NJ 08008<br>(609) 342-1458<br><a class="url" href="http://www.surfbuggylbi.com/">http://www.surfbuggylbi.com/</a></p>
+            <div style="margin-top: -15px; height:250px; width:100%; overflow:auto;">
+              <p>Long Beach Island's premier bicycle sales, rental, and service shop. From triathlon bikes to beach cruisers, their knowledgeable staff will put you and your family on the right bike! Their stores repair bikes and install any accessories you need. Rental bikes are available year round.</p>
+            </div>
+            <p><a href="http://www.surfbuggylbi.com/" target="_blank" class="booknow" style="width:105px;">VISIT SITE</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="w3-container w3-center w3-hide-medium w3-hide-large">
+      <h3>Taxi & Shuttle Services</h3>
+      <div class="w3-container" style="height: 100%; width: 100%;">
+        <h3 style="font-size: 20px;">Mike’s Affordable Shuttle Service</h3>
+        <p class="w3-opacity">Long Beach Island, NJ<br>(609) 287-3028<br><a class="url" target="_blank" href="http://www.mikesaffordableshuttle.com/">http://www.mikesaffordableshuttle.com/</a></p>
+        <div style="margin-top: -15px; width:100%; overflow:auto;">
+          <p>Uber and Lyft are limited on the island, we recommend this local taxi service just in case!</p>
+        </div>
+        <p><a href="http://www.mikesaffordableshuttle.com/" target="_blank" class="booknow" style="width:105px;">VISIT SITE</a></p>
+      </div>
+      <div class="w3-container" style="height: 100%; width: 100%;">
+        <h3 style="font-size: 20px;">LBI Shuttle</h3>
+        <p class="w3-opacity">Long Beach Island, NJ<br>(609) 342-2111<br><a class="url" target="_blank" href="https://www.lbishuttle.com/"> https://www.lbishuttle.com/</a></p>
+        <div style="margin-top: -15px; width:100%; overflow:auto;">
+          <p>Long Beach Island Shuttles are a shuttle service that is run along all 18 miles of the island. With designated areas to stop it is easy to find a trolley and waive them down to get anywhere you need.</p>
+          <p>Shuttle Fees:<li>$2 per ride 10am - 7pm.</li><li>$5 per ride 7pm - close</li><li>$125 season pass (all times)</li></p>
+        </div>
+        <p><a href="https://itunes.apple.com/gh/app/lbi-shuttle/id1016633333" target="_blank" class="booknow" style="width:105px;">THE APP</a></p>
+      </div>
+
+      <hr>
+
+      <h3>Bike Rentals</h3>
+      <div class="w3-container" style="height: 100%; width: 100%;">
+        <h3 style="font-size: 20px;">AJ's Bike Rentals</h3>
+        <p class="w3-opacity">311 Bay Ave, Beach Haven, NJ 08008<br>(609) 492-2626<br><a class="url" target="_blank" href="https://www.yelp.com/biz/a-js-rentals-beach-haven">AJ's Bike Rentals - Yelp</a></p>
+        <div style="margin-top: -15px; width:100%; overflow:auto;">
+          <p>Our go-to bike rental spot! A family owned business with reasonable prices and great service!</p>
+        </div>
+        <p><a href="https://www.yelp.com/biz/a-js-rentals-beach-haven" target="_blank" class="booknow" style="width:105px;">VISIT SITE</a></p>
+      </div>
+
+      <div class="w3-container" style="height: 100%; width: 100%;">
+        <h3 style="font-size: 20px;">Surf Buggy Bike Shop</h3>
+        <p class="w3-opacity">1501 Long Beach Blvd, Beach Haven, NJ 08008<br>(609) 342-1458<br><a class="url" href="http://www.surfbuggylbi.com/">http://www.surfbuggylbi.com/</a></p>
+        <div style="margin-top: -15px; width:100%; overflow:auto;">
+          <p>Long Beach Island's premier bicycle sales, rental, and service shop. From triathlon bikes to beach cruisers, their knowledgeable staff will put you and your family on the right bike! Their stores repair bikes and install any accessories you need. Rental bikes are available year round.</p>
+        </div>
+        <p><a href="http://www.surfbuggylbi.com/" target="_blank" class="booknow" style="width:105px;">VISIT SITE</a></p>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+<!-- Sixth Parallax Image with Registry -->
+<div class="bgimg-6 w3-display-container w3-center">
+</div>
+
+<!-- Registry -->
+<div class="w3-content w3-container w3-padding-64" id="registry">
+  
+  <div class="w3-center" style="margin-bottom: 20px;">
+    <h3 style="margin-bottom:30px; font-family: AmostelySignature; font-size: 80px;">Registry</h3>
+    <img src="Clam_Icon.png" alt="Clam Shell" style="height: 60px; width: 80px;">
+  </div>
+
+  <div class= "w3-center">
+    <div style="width: 70%; display: block; margin: auto;">
+      <h3>Coming Soon!</h3>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="button w3-hover-opacity">
+    <i class="fa fa-arrow-up w3-margin-right"></i>
+    To the top
+  </a>
+
+  <!--<div class="w3-xlarge w3-section">
+      <a href="https://www.instagram.com/swemanhattan/?hl=en" target="_blank">
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+      </a>
+      <p style="font-size: 18px; margin-top: -10px;">#LizAndJust</p>
+    <i class="fa fa-snapchat w3-hover-opacity swe-footer-hover-opacity"></i> 
+    <i class="fa fa-pinterest-p w3-hover-opacity swe-footer-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity swe-footer-hover-opacity"></i>
+  </div> -->
+</footer>
+
+<script>
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "5px 8px";
+    document.getElementById("logo").style.fontSize = "40px";
+    document.getElementById("navbar").style.borderBottom = "2px solid black";
+  } else {
+    document.getElementById("navbar").style.padding = "8px 8px";
+    document.getElementById("logo").style.fontSize = "60px";
+    document.getElementById("navbar").style.borderBottom = "none";
+  }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// Tabbed Menu
+function openMenu(evt, itineraryDate) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("itinerary");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" navy-background", "");
+  }
+  document.getElementById(itineraryDate).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " navy-background";
+}
+document.getElementById("myLink").click();
+
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+
+// Google Map - set pin
+
+function myMap()
+{
+  myCenter=new google.maps.LatLng(40.88848, -73.90299);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+</script>
+
+</body>
+</html>
+
